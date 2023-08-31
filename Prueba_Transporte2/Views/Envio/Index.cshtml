@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Prueba_Transporte2.Models.Envio>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ENVIO</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnvioId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioEnvioNeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroGuia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bodega)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlacaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnvioId)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioEnvioNeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEntrega)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroGuia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodegaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductoId)
+            </td>
+            <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.EnvioId">Editar</a> |
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.EnvioId">Detalles</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.EnvioId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
